@@ -1,0 +1,73 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header{
+    font-size: 8vw;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+/*     flex-grow: 1;
+ */}
+
+.itemList{
+    list-style-type: none;
+    display:flex;
+    flex-direction: column;
+    margin: 1vw;
+    border: 1px solid lightgray;
+    padding: 1vw;
+    background-image: linear-gradient(to top, lightblue, white);
+    width: 20vw;
+    height: 32vw;
+
+
+}
+
+.itemDescription{
+    margin: 1vw;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+/*     background-color: deeppink;
+ */    height: 100%;
+
+}
+
+.itemCity{
+    /* background-color: greenyellow; */
+    font-size: 8vw;
+
+
+}
+
+.itemTemp{
+    font-size: 5vw;
+   /*  background-color: darkorange; */
+}
+
+.alignCenter{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+}
+
+.alignBottom{
+    justify-content: space-between;
+}
+
+.fonts{
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgray;
+    font-size: 3vw;
+}
+
+.weatherIcon{
+    width: 8vw;
+    height: auto;
+}

@@ -2,5 +2,718 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "Pokemon": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/Pokemon",
+      "sourceRoot": "projects/Pokemon/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Pokemon",
+            "index": "projects/Pokemon/src/index.html",
+            "main": "projects/Pokemon/src/main.ts",
+            "polyfills": "projects/Pokemon/src/polyfills.ts",
+            "tsConfig": "projects/Pokemon/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/Pokemon/src/favicon.ico",
+              "projects/Pokemon/src/assets"
+            ],
+            "styles": [
+              "projects/Pokemon/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Pokemon/src/environments/environment.ts",
+                  "with": "projects/Pokemon/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Pokemon:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Pokemon:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Pokemon:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Pokemon/src/test.ts",
+            "polyfills": "projects/Pokemon/src/polyfills.ts",
+            "tsConfig": "projects/Pokemon/tsconfig.spec.json",
+            "karmaConfig": "projects/Pokemon/karma.conf.js",
+            "assets": [
+              "projects/Pokemon/src/favicon.ico",
+              "projects/Pokemon/src/assets"
+            ],
+            "styles": [
+              "projects/Pokemon/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Pokemon/tsconfig.app.json",
+              "projects/Pokemon/tsconfig.spec.json",
+              "projects/Pokemon/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Pokemon/e2e/protractor.conf.js",
+            "devServerTarget": "Pokemon:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Pokemon:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "PokemonForStudents": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/PokemonForStudents",
+      "sourceRoot": "projects/PokemonForStudents/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/PokemonForStudents",
+            "index": "projects/PokemonForStudents/src/index.html",
+            "main": "projects/PokemonForStudents/src/main.ts",
+            "polyfills": "projects/PokemonForStudents/src/polyfills.ts",
+            "tsConfig": "projects/PokemonForStudents/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/PokemonForStudents/src/favicon.ico",
+              "projects/PokemonForStudents/src/assets"
+            ],
+            "styles": [
+              "projects/PokemonForStudents/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/PokemonForStudents/src/environments/environment.ts",
+                  "with": "projects/PokemonForStudents/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "PokemonForStudents:build",
+            "port": 4202
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "PokemonForStudents:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "PokemonForStudents:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/PokemonForStudents/src/test.ts",
+            "polyfills": "projects/PokemonForStudents/src/polyfills.ts",
+            "tsConfig": "projects/PokemonForStudents/tsconfig.spec.json",
+            "karmaConfig": "projects/PokemonForStudents/karma.conf.js",
+            "assets": [
+              "projects/PokemonForStudents/src/favicon.ico",
+              "projects/PokemonForStudents/src/assets"
+            ],
+            "styles": [
+              "projects/PokemonForStudents/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/PokemonForStudents/tsconfig.app.json",
+              "projects/PokemonForStudents/tsconfig.spec.json",
+              "projects/PokemonForStudents/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/PokemonForStudents/e2e/protractor.conf.js",
+            "devServerTarget": "PokemonForStudents:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "PokemonForStudents:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "Pokemons": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/Pokemons",
+      "sourceRoot": "projects/Pokemons/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Pokemons",
+            "index": "projects/Pokemons/src/index.html",
+            "main": "projects/Pokemons/src/main.ts",
+            "polyfills": "projects/Pokemons/src/polyfills.ts",
+            "tsConfig": "projects/Pokemons/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/Pokemons/src/favicon.ico",
+              "projects/Pokemons/src/assets"
+            ],
+            "styles": [
+              "projects/Pokemons/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Pokemons/src/environments/environment.ts",
+                  "with": "projects/Pokemons/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Pokemons:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Pokemons:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Pokemons:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Pokemons/src/test.ts",
+            "polyfills": "projects/Pokemons/src/polyfills.ts",
+            "tsConfig": "projects/Pokemons/tsconfig.spec.json",
+            "karmaConfig": "projects/Pokemons/karma.conf.js",
+            "assets": [
+              "projects/Pokemons/src/favicon.ico",
+              "projects/Pokemons/src/assets"
+            ],
+            "styles": [
+              "projects/Pokemons/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Pokemons/tsconfig.app.json",
+              "projects/Pokemons/tsconfig.spec.json",
+              "projects/Pokemons/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Pokemons/e2e/protractor.conf.js",
+            "devServerTarget": "Pokemons:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Pokemons:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "Weather": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/Weather",
+      "sourceRoot": "projects/Weather/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/Weather",
+            "index": "projects/Weather/src/index.html",
+            "main": "projects/Weather/src/main.ts",
+            "polyfills": "projects/Weather/src/polyfills.ts",
+            "tsConfig": "projects/Weather/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/Weather/src/favicon.ico",
+              "projects/Weather/src/assets"
+            ],
+            "styles": [
+              "projects/Weather/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/Weather/src/environments/environment.ts",
+                  "with": "projects/Weather/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Weather:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Weather:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Weather:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/Weather/src/test.ts",
+            "polyfills": "projects/Weather/src/polyfills.ts",
+            "tsConfig": "projects/Weather/tsconfig.spec.json",
+            "karmaConfig": "projects/Weather/karma.conf.js",
+            "assets": [
+              "projects/Weather/src/favicon.ico",
+              "projects/Weather/src/assets"
+            ],
+            "styles": [
+              "projects/Weather/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/Weather/tsconfig.app.json",
+              "projects/Weather/tsconfig.spec.json",
+              "projects/Weather/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/Weather/e2e/protractor.conf.js",
+            "devServerTarget": "Weather:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "Weather:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "WeatherDemo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/WeatherDemo",
+      "sourceRoot": "projects/WeatherDemo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/WeatherDemo",
+            "index": "projects/WeatherDemo/src/index.html",
+            "main": "projects/WeatherDemo/src/main.ts",
+            "polyfills": "projects/WeatherDemo/src/polyfills.ts",
+            "tsConfig": "projects/WeatherDemo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/WeatherDemo/src/favicon.ico",
+              "projects/WeatherDemo/src/assets"
+            ],
+            "styles": [
+              "projects/WeatherDemo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/WeatherDemo/src/environments/environment.ts",
+                  "with": "projects/WeatherDemo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "WeatherDemo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "WeatherDemo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "WeatherDemo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/WeatherDemo/src/test.ts",
+            "polyfills": "projects/WeatherDemo/src/polyfills.ts",
+            "tsConfig": "projects/WeatherDemo/tsconfig.spec.json",
+            "karmaConfig": "projects/WeatherDemo/karma.conf.js",
+            "assets": [
+              "projects/WeatherDemo/src/favicon.ico",
+              "projects/WeatherDemo/src/assets"
+            ],
+            "styles": [
+              "projects/WeatherDemo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/WeatherDemo/tsconfig.app.json",
+              "projects/WeatherDemo/tsconfig.spec.json",
+              "projects/WeatherDemo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/WeatherDemo/e2e/protractor.conf.js",
+            "devServerTarget": "WeatherDemo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "WeatherDemo:serve:production"
+            }
+          }
+        }
+      }
+    },
+
+    "WeatherDemo2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/WeatherDemo2",
+      "sourceRoot": "projects/WeatherDemo2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/WeatherDemo2",
+            "index": "projects/WeatherDemo2/src/index.html",
+            "main": "projects/WeatherDemo2/src/main.ts",
+            "polyfills": "projects/WeatherDemo2/src/polyfills.ts",
+            "tsConfig": "projects/WeatherDemo2/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/WeatherDemo2/src/favicon.ico",
+              "projects/WeatherDemo2/src/assets"
+            ],
+            "styles": [
+              "projects/WeatherDemo2/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/WeatherDemo2/src/environments/environment.ts",
+                  "with": "projects/WeatherDemo2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "WeatherDemo2:build",
+            "port": 4201
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "WeatherDemo2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "WeatherDemo2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/WeatherDemo2/src/test.ts",
+            "polyfills": "projects/WeatherDemo2/src/polyfills.ts",
+            "tsConfig": "projects/WeatherDemo2/tsconfig.spec.json",
+            "karmaConfig": "projects/WeatherDemo2/karma.conf.js",
+            "assets": [
+              "projects/WeatherDemo2/src/favicon.ico",
+              "projects/WeatherDemo2/src/assets"
+            ],
+            "styles": [
+              "projects/WeatherDemo2/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/WeatherDemo2/tsconfig.app.json",
+              "projects/WeatherDemo2/tsconfig.spec.json",
+              "projects/WeatherDemo2/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/WeatherDemo2/e2e/protractor.conf.js",
+            "devServerTarget": "WeatherDemo2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "WeatherDemo2:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "Pokemon"
 }

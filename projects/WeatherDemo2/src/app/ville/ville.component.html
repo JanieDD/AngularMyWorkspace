@@ -1,0 +1,18 @@
+<div>
+    <div class="fonts">
+        <div class="fonts">Liste des villes</div>
+        <form class="fonts">
+            <!-- <select name="selectedCity" [(ngModel)]="selectedCity" > -->
+                <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
+                <!-- <option *ngFor=" let city of listOfCities.default" [ngValue]="city"> -->
+                    <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
+                    {{ city.name }}
+                    <!-- city | json   (pour tester si ça passe dans la liste) -->
+                </option>
+            </select>
+        </form>
+    </div>
+</div>
+
+
+<!-- <app-meteo [selectedCity]="selectedCity"></app-meteo> -->

@@ -1,0 +1,35 @@
+<div id="container-principal">
+   <div class="fonts">
+       <div class="fonts">Liste des Pokemon</div>
+       <form class="fonts">
+           <select name="selectedPokemon" [(ngModel)]="selectedPokemon" >
+               <option *ngFor=" let pokemon of listOfPokemons.default" [ngValue]="pokemon">
+                   {{ selectedPokemon.name }}
+                   <!-- city | json   (pour tester si ça passe dans la liste) -->
+               </option>
+           </select>
+       </form>
+   </div>
+</div>
+<app-pokemon-detail [selectedPokemon]="selectedPokemon"></app-pokemon-detail>
+
+
+<!--<h2>{{pokemonTest.name | uppercase}} Details</h2>  
+<div><span>id: </span>{{pokemonTest.id}}</div>
+<div><span>name: </span>{{pokemonTest.name}}</div>
+
+<div>{{pokemonTest | json}}</div>
+<div>{{pokemonTableau | json}}</div>
+<div>{{pokemonTableau[0].name}}</div>-->
+
+<!-- <app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
+<div>
+   <h2>My Pokemons</h2>
+   <ul class="pokemon">
+      <li *ngFor="let pok of pokemons"(click)="onSelect(pok)">
+         <span class="badge">{{pok.url}}</span> {{pok.name}}
+      </li>
+   </ul>
+</div> -->
+
+

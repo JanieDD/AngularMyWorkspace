@@ -1,0 +1,23 @@
+<h1 class=" alignCenter fonts">
+    Weather Forecast
+</h1>
+<div class="itemCity alignCenter fonts">
+    {{this.selectedCity.name}}
+</div>
+<div class="flex-container fonts">
+
+    <div *ngIf="selectedCity" class="list alignCenter">
+        <div *ngFor="let weatherItem of selectedCity.list" class="itemList alignCenter ">
+
+            <div class="alignCenter">{{ weatherItem.dt *1000 | date: 'EEE dd MMM HH:mm'}}</div>
+
+            <div *ngFor="let weatherWeather of weatherItem.weather" class="itemDescription alignCenter alignBottom">
+                <div class="alignCenter">{{weatherWeather.description}}</div>
+                <img class="weatherIcon" src="http://openweathermap.org/img/wn/{{weatherWeather.icon}}@2x.png">
+                <div class="itemTemp alignCenter">{{weatherItem.main.temp | number:'1.0-0'}}</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

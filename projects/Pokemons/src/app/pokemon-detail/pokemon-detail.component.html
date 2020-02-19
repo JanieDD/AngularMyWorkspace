@@ -1,0 +1,24 @@
+
+
+
+<div>
+    <h2>My Pokemons</h2>
+    <ul class="pokemon">
+       <li *ngFor="let pokemon of pokemons">
+          <span class="badge">{{pokemon.url}}</span> {{pokemon.name}}
+       </li>
+    </ul>
+</div>
+
+
+
+
+<!-- <div *ngIf="pokemon">
+    <h2>{{pokemon.name | uppercase}} Details</h2>
+    <div>
+        <span>id:</span>{{pokemon.url}}
+    </div>
+    <div>
+        <span>name:</span>{{pokemon.name}}
+    </div>
+</div> -->

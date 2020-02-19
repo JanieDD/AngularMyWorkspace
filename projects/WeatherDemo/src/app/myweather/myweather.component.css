@@ -1,0 +1,64 @@
+#container-principal {
+  background-color: #247ba0;
+  color: black;
+  padding-bottom: 10%;
+  font-family: fantasy;
+}
+
+#titre-principal {
+  background-color: #ff1654;
+  color: white;
+}
+
+.titre {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+}
+
+.meteo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+#container-meteo {
+  display: flex;
+  font-family: fantasy;
+  color: black;
+  width: 100%;
+}
+
+#description-container {
+  height: 150px;
+}
+
+#description-texte {
+  height: 2vw;
+}
+
+.meteo-detail {
+  text-align: center;
+  background-color: #b1caca;
+  padding: 5px;
+  margin: 5px;
+  height: 275px;
+  flex-basis: 0;
+  text-align: center;
+  border: 1px solid white;
+  justify-content: center;
+}
+
+.temperature {
+  font-size: 25px;
+}
+
+.option{
+  font-size: 15px;
+}

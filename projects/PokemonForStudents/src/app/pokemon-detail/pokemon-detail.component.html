@@ -1,0 +1,8 @@
+<div id="selected-pokemon-container" *ngIf="selectedPokemon">
+    <h2 id="pokemon-name">{{selectedPokemon.name | uppercase}} </h2>
+    <div><span>url: </span><a href="{{selectedPokemon.url}}" target="_blank">{{selectedPokemon.url}}</a></div>
+    <img src="{{selectedPokemon.sprites.back_default}}" />
+    <img src="{{selectedPokemon.sprites.front_default}}" />
+    <img src="{{selectedPokemon.sprites.back_shiny}}" />
+    <img src="{{selectedPokemon.sprites.front_shiny}}" />
+</div>

@@ -1,0 +1,25 @@
+<!-- <app-ville></app-ville>  --> <!-- à changer car maintenant on veut appeler le parent ( et c'est le module ville)-->
+<!-- <app-meteo-courant></app-meteo-courant> -->
+<!-- <app-meteo></app-meteo> -->  <!-- module de meteo-->
+
+<!-- Le parent fait la communication entre les frères Emitter et Receiver-->
+<!-- <p>App receiving data to transfer: {{ transferData }}</p>
+<app-test-observer-receiver [receiveFromBrother]="transferData"></app-test-observer-receiver>
+<app-test-observer-emitter (sendToBrother)="onValueChange($event)"></app-test-observer-emitter> -->
+<!-- [] pour une directive et () pour un évènement-->
+
+
+<!-- <app-test-observer-emitter></app-test-observer-emitter> -->
+<!-- <app-test-observer-receiver></app-test-observer-receiver> -->
+
+<h1>Angular Router</h1>
+<nav>
+    <a routerLink="/test-observer" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Test Observer</a>
+   <br>
+   <a routerLink="/meteo/123" routerLinkActive="active">Meteo</a>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+<router-outlet></router-outlet>

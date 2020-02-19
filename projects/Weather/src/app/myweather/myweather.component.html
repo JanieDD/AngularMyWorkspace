@@ -1,0 +1,16 @@
+<div *ngIf="selectedPokemon">
+    <h2>{{selectedPokemon.name | uppercase}} Details</h2>
+    <div>
+       <span>id:</span>{{selectedPokemon.id}}</div>
+    <div>
+       <span>name:</span>{{selectedPokemon.name}}
+    </div>
+    </div>
+    
+    
+    <h2>My Pokemons</h2>
+    <ul class="pokemon">
+        <li *ngFor="let pok of meteoTableau" (click)="onSelect(pok)">
+           <span class="badge">{{pok.id}}</span> {{pok.name}}
+       </li>
+    </ul>

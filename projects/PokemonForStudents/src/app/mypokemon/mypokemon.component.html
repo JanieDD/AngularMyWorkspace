@@ -1,0 +1,28 @@
+<div>
+    <div class="fonts">
+        <div class="fonts">Liste des Pokemons</div>
+        <form class="fonts">
+            <select *ngIf="pokemons" name="selectedPokemon" [(ngModel)]="selectedPokemon"
+                (ngModelChange)="onSelect($event, selectedPokemon)">
+                <option *ngFor=" let pokemon of pokemons.results" [ngValue]="pokemon">
+                    {{ pokemon.name }}
+
+                </option>
+            </select>
+        </form>
+    </div>
+</div>
+<!-- <h2>Liste des Pokemons</h2>
+<div>
+    <ul class="pokemon" *ngIf="pokemons"> -->
+<!--         <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
+           
+                <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
+                {{ city.name }} -->
+<!-- <li *ngFor="let pokemon of pokemons.results" [class.selected]="pok === selectedPokemon" (click)="onSelect(pok)"></li> -->
+<!--         <li *ngFor="let pokemon of pokemons.results" [class.selected]="selectedPokemon" (ngModelChange)="onSelect($event, selectedCity)">
+            <span class="badge">{{pokemon.name}}</span> {{pokemon.url}}
+        </li>
+    </ul>
+
+</div> -->

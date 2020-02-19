@@ -1,0 +1,30 @@
+<div id="container-principal">
+    <div>
+        <h1 id="titre-principal" class="titre">Prévisions à long therme</h1>
+    </div>
+<!-- 
+    <div>
+        <h2 class="titre">{{this.selectedCity.name}}</h2>
+    </div> -->
+    <div id="container-meteo">
+        <ul class="meteo">
+            <li class="meteo-detail" *ngFor="let meteo of selectedCity.list">
+                <span class="badge">{{ meteo.dt *1000 | date: 'EEE dd MMM HH:mm'}}</span>
+                <br>
+                <span class="option">{{meteo.main.humidity}} %</span>
+                <br>
+                <span class="option">{{meteo.main.pressure /10}} kPa</span>
+                <div id="description-container" *ngFor="let weather of meteo.weather">
+                    <p id="description-texte">{{weather.description}}</p>
+                    <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" />
+                </div>
+                <span class="temperature">{{meteo.main.temp | number: '1.0-0'}}°C</span>
+
+            </li>
+        </ul>
+    </div>
+
+<!--         <div style="text-align: center">
+        <img src="https://picsum.photos/200/300" />
+    </div> -->
+</div>

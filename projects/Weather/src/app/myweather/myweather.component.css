@@ -1,0 +1,59 @@
+/* pokemonComponent's private CSS styles */
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgrey;
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   font-size: 10vw;
+    color: dimgrey;
+  
+  /*  background-color: deeppink; */
+  }
+  
+  .pokemon {
+      padding: 0;
+    }
+  
+    .pokemonItem{
+      margin: 3vw;
+      background-color: #EEE;
+  
+      font-size: 3vw;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .pokemon :hover {
+      color: #607D8B;
+      background-color: #DDD;
+    }
+    .pokemon.selected {
+      background-color: #CFD8DC;
+      color: white;
+    }
+    .pokemon.selected:hover {
+      background-color: #BBD8DC;
+      color: white;
+    }
+    .pokemon .badge {
+      color: white;
+      background-color:#405061;
+      display: flex;
+      flex-direction: row;
+      width: 20vw;
+      padding-left: 2vw;
+      align-items: center;
+    }
+  
+    .icon{
+      width: 10vw;
+    }
+  

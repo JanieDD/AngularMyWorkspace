@@ -1,0 +1,25 @@
+<div id="container-principal">
+    <div class="fonts">
+        <div class="fonts">Liste des villes</div>
+        <form class="fonts">
+<!--             <select name="selectedCity" [(ngModel)]="selectedCity" >
+                <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
+                    {{ city.name }}
+                </option>
+                
+            </select> -->
+            <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
+                <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
+                    {{ city.name }}
+                </option>
+            </select>
+        </form>
+    </div>
+</div>
+<!-- <app-myweather [selectedCity]="selectedCity"></app-myweather> -->
+
+
+
+<!-- <app-myweather [city]="selectedCity"></app-myweather> -->
+
+
