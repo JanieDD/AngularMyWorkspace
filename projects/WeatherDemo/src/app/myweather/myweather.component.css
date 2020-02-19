@@ -8,6 +8,7 @@
 #titre-principal {
   background-color: #ff1654;
   color: white;
+  font-size: 3vw;
 }
 
 .titre {
@@ -15,6 +16,7 @@
   font-weight: bold;
   color: black;
   background-color: white;
+  font-size: 3vw;
 }
 
 .meteo {
@@ -56,9 +58,9 @@
 }
 
 .temperature {
-  font-size: 25px;
+ font-size: 25px;
 }
 
 .option{
-  font-size: 15px;
+ font-size: 15px;
 }

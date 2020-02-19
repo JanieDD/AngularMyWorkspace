@@ -7,13 +7,15 @@ import {FormsModule} from '@angular/forms';
 import {MyvilleModule} from './myville/myville.module';
 import {MyweatherModule} from './myweather/myweather.module';
 import { VilleService } from './ville.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
  
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
