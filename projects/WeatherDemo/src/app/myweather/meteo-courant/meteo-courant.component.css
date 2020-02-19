@@ -9,6 +9,7 @@
 #titre-principal {
   background-color: #ff1654;
   color: white;
+  font-size: 3vw;
 }
 
 .titre {
@@ -17,6 +18,7 @@
   color: black;
   background-color: white;
   font-family: fantasy;
+  font-size: 3vw;
 }
 
 .header {

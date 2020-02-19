@@ -8,6 +8,9 @@
                 </option>
                 
             </select> -->
+            <div class="itemCity alignCenter fonts">
+                <h2>{{this.selectedCity.name}} </h2> 
+             </div>
             <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
                 <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
                     {{ city.name }}
