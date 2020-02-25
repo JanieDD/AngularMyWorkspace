@@ -3,7 +3,7 @@ import { Pokemon } from './pokemon';
 //import { POKEMON } from './mock-pokemons';
 
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { PokemonService } from '../pokemon.service';
+import { PokemonService } from '../../pokemon.service';
 
 
 @Component({

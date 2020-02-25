@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { Pokemon } from '../pokemon';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { IPokemon } from '../IPokemon';
-import { PokemonService } from '../pokemon.service';
+import { IPokemon } from '../../IPokemon';
+import { PokemonService } from '../../pokemon.service';
 
 
 @Component({
