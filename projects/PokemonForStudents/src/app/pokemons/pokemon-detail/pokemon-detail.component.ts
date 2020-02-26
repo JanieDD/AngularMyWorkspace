@@ -2,6 +2,9 @@ import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/cor
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { IPokemon } from '../../IPokemon';
 import { PokemonService } from '../../pokemon.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -17,14 +20,33 @@ export class PokemonDetailComponent implements OnInit, OnChanges {
 
   // @Input() selectedPokemon;
   selectedPokemon: IPokemon;
+  pokemon$: Observable<IPokemon>;
 
-  constructor(private http: HttpClient, private pokemonService: PokemonService) {
+  constructor(private http: HttpClient, private pokemonService: PokemonService ,   private route: ActivatedRoute,
+    private router: Router) {
     //console.log("selectedPokemon in details: " + this.pokemon);
 
 
   }
-
   ngOnInit() {
+
+    this.pokemon$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        // getPokemon nous renvoie un observable de IPokemon getPokemon(name: string): Observable<IPokemon>
+        // pokemon correspondant (name) dans la liste
+        this.pokemonService.getPokemon(params.get('name')))
+    );
+  
+  this.pokemon$.subscribe(
+    (value) => {
+      this.selectedPokemon = value;
+      console.log("POKEMON subscribe to selectedPokemon = ");
+      console.log(value);
+    });
+
+  }
+
+/*   ngOnInit() {
     this.pokemonService.getSelectedPokemon().subscribe(
       value => {
         this.selectedPokemon = value;
@@ -32,7 +54,7 @@ export class PokemonDetailComponent implements OnInit, OnChanges {
         console.log('subscribe pokemon' + this.selectedPokemon);
       }
     );
-  }
+  } */
 
   /*   ngOnChanges(changes: SimpleChanges): void {
       //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
@@ -46,6 +68,7 @@ export class PokemonDetailComponent implements OnInit, OnChanges {
       console.log(this.selectedPokemon);
   
     } */
+  
 
   fetchDetails() {
 

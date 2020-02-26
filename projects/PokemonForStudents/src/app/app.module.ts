@@ -20,9 +20,10 @@ import { PokemonsModule } from './pokemons/pokemons.module';
 
     BrowserModule,
     FormsModule,
+    PokemonsModule, //l'ordre des modules est important car elles vont à la suite pour la lecture du programme
     AppRoutingModule,
-    HttpClientModule,
-    PokemonsModule
+    HttpClientModule
+     
   ],
   exports: [
   CombatCenterComponent

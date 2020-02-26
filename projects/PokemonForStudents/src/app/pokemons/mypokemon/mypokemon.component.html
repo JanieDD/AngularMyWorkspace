@@ -2,13 +2,19 @@
     <div class="fonts">
         <div class="fonts">Liste des Pokemons</div>
         <form class="fonts">
-            <select *ngIf="pokemons" name="selectedPokemon" [(ngModel)]="selectedPokemon"
+<!--             <select *ngIf="pokemons" name="selectedPokemon" [(ngModel)]="selectedPokemon"
                 (ngModelChange)="onSelect($event, selectedPokemon)">
                 <option *ngFor=" let pokemon of pokemons.results" [ngValue]="pokemon">
                     {{ pokemon.name }}
 
                 </option>
-            </select>
+            </select> -->
+            <li *ngFor="let pok of listOfPokemons.results" [class.selected]="pok === selectedPokemon">
+                <a [routerLink]="['/pokemon-detail', pok.name]">
+                    <!--<a (click)="onSelect(pok)"> -->
+                    <span class="badge">{{pok.name}}</span> {{pok.url}}
+                </a>
+            </li>
         </form>
     </div>
 </div>

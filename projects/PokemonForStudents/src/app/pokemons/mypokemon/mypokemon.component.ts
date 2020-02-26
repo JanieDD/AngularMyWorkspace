@@ -4,6 +4,8 @@ import { Pokemon } from './pokemon';
 
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { PokemonService } from '../../pokemon.service';
+import { Observable } from 'rxjs';
+import { IPokemon } from '../../IPokemon';
 
 
 @Component({
@@ -21,10 +23,27 @@ export class MypokemonComponent implements OnInit {
   //pokemons = POKEMON;
   pokemons;
   pokemonsDetails;
+  listOfPokemons;
 
   selectedPokemon: Pokemon;
 
-  constructor(private http: HttpClient, private pokemonService: PokemonService) { }
+  constructor(private http: HttpClient, private pokemonService: PokemonService) { 
+    this.pokemonService.getPokemons()
+    .subscribe(
+      (value) => {
+        this.listOfPokemons = value;
+        console.log("POKEMON subscribe to getPokemons value = ");
+        console.log(value);
+      }
+    );
+
+
+  //this.fetchDetails();
+
+
+}
+
+  
 
   ngOnInit() {
     this.http.get('https://pokeapi.co/api/v2/pokemon?limit=151/',
@@ -34,15 +53,8 @@ export class MypokemonComponent implements OnInit {
 
         this.pokemons = data;
 
-        // iterer dans l'objet pour obtenir l'url de chaque pokemon
-
-
-        //console.log(element);
-
-
-
         console.log(this.pokemons);
-        //console.log(this.pokemonsDetails);
+        
 
       },
         (err: HttpErrorResponse) => {
