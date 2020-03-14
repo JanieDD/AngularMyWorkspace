@@ -2,20 +2,28 @@
     <div class="fonts">
         <div class="fonts">Liste des villes</div>
         <form class="fonts">
-<!--             <select name="selectedCity" [(ngModel)]="selectedCity" >
+            <!--             <select name="selectedCity" [(ngModel)]="selectedCity" >
                 <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
                     {{ city.name }}
                 </option>
                 
             </select> -->
-            <div class="itemCity alignCenter fonts">
+            <!--             <div class="itemCity alignCenter fonts">
                 <h2>{{this.selectedCity.name}} </h2> 
-             </div>
-            <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
+             </div> -->
+            <!-- <select name="selectedCity" [(ngModel)]="selectedCity" (ngModelChange)="onSelect($event, selectedCity)">
                 <option *ngFor=" let city of listOfCities.default" [ngValue]="city">
                     {{ city.name }}
                 </option>
-            </select>
+            </select> -->
+
+            <ul>
+                <li *ngFor="let city of listOfCities.default">
+                    <a [routerLink]="['/mymeteo', city.name]">
+                        <span class="badge">{{city.name}}</span>
+                    </a>
+                </li>
+            </ul>
         </form>
     </div>
 </div>
@@ -24,5 +32,3 @@
 
 
 <!-- <app-myweather [city]="selectedCity"></app-myweather> -->
-
-

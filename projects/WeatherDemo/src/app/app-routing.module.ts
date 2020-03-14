@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MyweatherComponent} from './myweather/myweather.component';
+import {MyweatherComponent} from './meteo/myweather/myweather.component';
 import {MyvilleComponent} from './myville/myville.component';
-import {MeteoCourantComponent} from './myweather/meteo-courant/meteo-courant.component';
+import {MeteoCourantComponent} from './meteo/meteo-courant/meteo-courant.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICity } from '../ICity';
-import * as cityList from './city.list.json';  //pour avoir la liste de ville que nous avons rajouté
+import * as cityList from '../myville/city.list.json';  //pour avoir la liste de ville que nous avons rajouté
+//import cityList from './city.list.json';
 import { VilleService } from '../ville.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -15,10 +16,19 @@ export class MyvilleComponent implements OnInit {
 
   selectedCity: ICity;
   defaultCity;
+  listOfVilles;
 
 
   constructor(private http: HttpClient, private villeservice: VilleService) {
-    
+    this.villeservice.getVilles()
+      .subscribe(
+        (value) => {
+          this.listOfVilles = value;
+          console.log("Ville subscribe to getVilles value = ");
+          console.log(value);
+        }
+      );
+
     /*     this.selectedCity = {
           id: 6145489,
           name: "Shawinigan",

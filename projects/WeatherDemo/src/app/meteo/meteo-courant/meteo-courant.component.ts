@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { VilleService } from '../../ville.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { ICity } from '../../ICity';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-meteo-courant',
@@ -11,17 +15,36 @@ export class MeteoCourantComponent implements OnInit {
 
   //@Input() 
   selectedCity;
-  
   defaultCities;
+  ville$: Observable<ICity>;
 
-  constructor(private http: HttpClient, private villeservice : VilleService) {
+  constructor(private http: HttpClient, private villeservice : VilleService, private route: ActivatedRoute,
+    private router: Router) {
     //this.selectedCity = this.defaultCities;
     console.log("WEATHER constructor");
 
     console.log("this.selectedCity = ");
     console.log(this.selectedCity);
   }
+
   ngOnInit() {
+
+    this.ville$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        // getPokemon nous renvoie un observable de IPokemon getPokemon(name: string): Observable<IPokemon>
+        // pokemon correspondant (name) dans la liste
+        this.villeservice.getVille(params.get('name')))
+    );
+  
+  this.ville$.subscribe(
+    (value) => {
+      this.selectedCity = value;
+      console.log("VILLE subscribe to selectedCity = ");
+      console.log(value);
+    });
+
+  }
+/*   ngOnInit() {
     this.villeservice.getSelectedCity().subscribe(
       value => {
         this.selectedCity = value;
@@ -29,7 +52,7 @@ export class MeteoCourantComponent implements OnInit {
         console.log('subscribe weather' + this.selectedCity);
       }
     );
-  }
+  } */
 
   fetchDetails() {
 
