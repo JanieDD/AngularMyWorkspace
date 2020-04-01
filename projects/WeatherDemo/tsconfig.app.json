@@ -2,21 +2,23 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-  //  "resolveJsonModule": true, "esModuleInterop": true,
     "types": [],
-    "resolveJsonModule": true,
-    "esModuleInterop": true 
+    "esModuleInterop": true,
+    "paths": {
+      "@src/*": [
+        "projects/WeatherDemo/src/*.web",
+        "projects/WeatherDemo/src/*"
+      ]
+    }
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.ts"
+    "src/polyfills.ts",
+    "projects/WeatherDemo/src/main.ts",
+    "projects/WeatherDemo/src/polyfills.ts"
   ],
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"
-  ],
- // "compilerOptions": {  "resolveJsonModule": true, "esModuleInterop": true }
+  ]
 }

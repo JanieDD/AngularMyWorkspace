@@ -594,7 +594,6 @@
         }
       }
     },
-
     "WeatherDemo2": {
       "projectType": "application",
       "schematics": {},
@@ -715,5 +714,8 @@
       }
     }
   },
-  "defaultProject": "Pokemon"
+  "defaultProject": "Pokemon",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

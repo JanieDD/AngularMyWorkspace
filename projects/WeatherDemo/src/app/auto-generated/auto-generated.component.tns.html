@@ -1,0 +1,21 @@
+
+<!-- <DockLayout width="400" height="400" backgroundColor="black" stretchLastChild="true">
+    <Label text="Patate" dock="left" backgroundColor="Purple"></Label>
+    <Image src="https://patatesdolbec.com/wp-content/uploads/2018/04/jaunes-table-1000x630.jpg" stretch="aspectFill"></Image>
+    <Label text="&#xf019;" class="far" dock="left" backgroundColor="lightblue"></Label>
+    <Label text="last child" backgroundColor="pink"></Label>
+    <Button text="Test" class="btn btn-primary"  backgroundColor="lightblue" color="white"></Button>
+</DockLayout> -->
+
+<GridLayout columns="50, auto, *" rows="50, auto, *" width="400" height="400" backgroundColor="black">
+    <Label text="Patate" row="0" col="0" backgroundColor="Purple" color="white"></Label>
+    <TextField hint="Entrez le texte ici" 
+           color="black" 
+           backgroundColor="lightyellow" row="0" col="1" colSpan="2" backgroundColor="pink"></TextField>
+    <Progress value="25" maxValue="100" (valueChanged)="onValueChanged($event)" row="1" col="0" rowSpan="2" backgroundColor="white"></Progress>
+    <Label text="Aucune Idée" row="1" col="1" backgroundColor="white"></Label>
+    <Button text="Test" row="1" col="2" backgroundColor="lightblue" color="white"></Button>
+    <Label text="&#xf019;" class="far" row="2" col="1" backgroundColor="pink"></Label>
+    <Image src="https://patatesdolbec.com/wp-content/uploads/2018/04/jaunes-table-1000x630.jpg" stretch="aspectFill" row="2" col="2"></Image>
+</GridLayout>
+

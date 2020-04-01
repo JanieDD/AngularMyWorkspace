@@ -19,7 +19,16 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@src/*": [
+        "projects/WeatherDemo/src/*.android.ts",
+        "projects/WeatherDemo/src/*.ios.ts",
+        "projects/WeatherDemo/src/*.tns.ts",
+        "projects/WeatherDemo/src/*.web.ts",
+        "projects/WeatherDemo/src/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
